@@ -7,9 +7,9 @@ import javax.ws.rs.*;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 
-@Path("/json")
-@Produces(MediaType.APPLICATION_JSON)
-public class JsonResource {
+@Path("/xml")
+@Produces(MediaType.APPLICATION_XML)
+public class XmlResource {
 
     @GET
     public String info(@Context HttpServletRequest ctx) {
@@ -33,8 +33,9 @@ public class JsonResource {
     }
 
     @POST
-    @Consumes(MediaType.APPLICATION_JSON)
+    @Consumes(MediaType.APPLICATION_XML)
     public MyData mirror(MyData content) {
         return content;
     }
+
 }
