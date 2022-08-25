@@ -1,0 +1,1 @@
+standalone examples from repo J2EE_SABUROV related to Jersey
