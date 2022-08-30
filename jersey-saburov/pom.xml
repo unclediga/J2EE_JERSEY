@@ -34,37 +34,25 @@
             <groupId>javax</groupId>
             <artifactId>javaee-api</artifactId>
             <version>${version.javaee}</version>
-        <!--    <scope>provided</scope>  -->
+            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.glassfish.jersey.containers</groupId>
             <artifactId>jersey-container-servlet</artifactId>
             <version>${version.jersey}</version>
-        <!--    <scope>provided</scope>  -->
-
-             <exclusions>
-
-             <exclusion>
-		 <groupId>javax.ws.rs</groupId>
-              <artifactId>javax.ws.rs-api</artifactId>
-             </exclusion>
-             </exclusions>
+            <scope>provided</scope>
         </dependency>
-<!--
         <dependency>
             <groupId>org.glassfish.jersey.inject</groupId>
             <artifactId>jersey-hk2</artifactId>
             <version>${version.jersey}</version>
-            <scope>provided</scope>  
+            <scope>provided</scope>
         </dependency>
-
--->
-
         <dependency>
             <groupId>org.glassfish.jersey.media</groupId>
             <artifactId>jersey-media-moxy</artifactId>
             <version>${version.jersey}</version>
-        <!--    <scope>provided</scope>  -->
+            <scope>provided</scope>
         </dependency>
 
       <!-- JSOn-P -->
@@ -83,19 +71,17 @@
             <version>2.3.3</version>
         </dependency>
     -->
-
+ <!--
         <dependency>
             <groupId>org.glassfish.jersey.media</groupId>
             <artifactId>jersey-media-jaxb</artifactId>
             <version>${version.jersey}</version>
-        <!--    <scope>provided</scope>  -->
         </dependency>
 
         <dependency>
             <groupId>org.glassfish.jersey.media</groupId>
             <artifactId>jersey-media-json-binding</artifactId>
             <version>${version.jersey}</version>
-        <!--    <scope>provided</scope>  -->
         </dependency>
 
 	
@@ -110,6 +96,8 @@
             <artifactId>jaxb-impl</artifactId>
             <version>2.3.3</version>
         </dependency>
+  -->
+
    <!--   
 
         <dependency>
@@ -146,6 +134,30 @@
         </dependency>
     </dependencies>
 
+    <profiles>
+       <profile>
+        <id>jetty</id>
+        <dependencies>
+            <dependency>
+                <groupId>org.glassfish.jersey.containers</groupId>
+                <artifactId>jersey-container-servlet</artifactId>
+                <version>${version.jersey}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.glassfish.jersey.inject</groupId>
+                <artifactId>jersey-hk2</artifactId>
+                <version>${version.jersey}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.glassfish.jersey.media</groupId>
+                <artifactId>jersey-media-moxy</artifactId>
+                <version>${version.jersey}</version>
+            </dependency>
+        </dependencies>
+       </profile>
+    </profiles>
+
+
     <build>
         <plugins>
             <plugin>
@@ -180,6 +192,7 @@
                     <!-- scans your project for any changes to hot swap it to server -->
                     <scanIntervalSeconds>5</scanIntervalSeconds>
                 </configuration>
+<!--
                 <dependencies>
                     <dependency>
                         <groupId>org.slf4j</groupId>
@@ -192,6 +205,7 @@
                         <version>${logback-version}</version>
                     </dependency>
                 </dependencies>
+-->
             </plugin>
         </plugins>
 

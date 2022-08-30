@@ -30,3 +30,18 @@ StAX	Streaming API for XML	Нет	1.0	1.0	1.0	1.0
 CDI	Context and Dependency Injection	Нет	Нет	1.0	1.1	2.0
 Validation	Bean Validation	Нет	Нет	1.0	1.1	2.0
 Security	Java EE Security API	Нет	Нет	Нет	Нет	1.0
+
+
+Jetty Version	Servlet	License						     Java
+------------------------------------------------------------------
+Jetty 9.4.x 	3.1     JavaEE 8/javax.servlet.*         Java 8
+Jetty 10.0.x    4.0     JakartaEE 8/javax.servlet.*      Java 11+
+Jetty 11.0.x    5.0     JakartaEE 9/jakartaee.servlet.*  Java 11+
+
+
+https://eclipse-ee4j.github.io/jersey.github.io/documentation/latest/migration.html#mig-2.30
+
+
+30.1. Migrating from Jersey 2.29 to 2.29.1 and 2.30+
+30.1.1. Breaking Changes
+Versions 2.30+ do not introduce nothing breaking, however version 2.29.1 has a major change which means migration of Jersey to Jakarta EE (8) platform thus all inner dependencies to APIs are migrated to jakarta EE maven coordinates. This also means that all dependencies which were taken from JDK as such (like JAXB etc) are now external for JDK 1.8 (but for JDK 11+ they are external even in their Java EE form). So, for those who will migrate to versions of Jersey 2.29.1 or 2.30+ , a massive extension of dependencies being downloaded for the project build will occur. Also there is extended support of JDKs - maximum compatibility with JDK 15 (including previous JDKs). And other major improvements and fixes which are described in details in release notes below.
